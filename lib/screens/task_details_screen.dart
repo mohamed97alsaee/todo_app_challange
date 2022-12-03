@@ -10,6 +10,28 @@ class TaskDetailsScreen extends StatefulWidget {
 
 class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
   @override
+  void initState() {
+    fetchData();
+    super.initState();
+  }
+
+  fetchData() {
+    print("WLCOME IN DETAILS");
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    print("USER SET STATE");
+    super.setState(fn);
+  }
+
+  @override
+  void dispose() {
+    print("BYE FROM DETAILS");
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -29,6 +51,11 @@ class _TaskDetailsScreenState extends State<TaskDetailsScreen> {
                 size: size.width * 0.5)
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {});
+        },
       ),
     );
   }
